@@ -1,0 +1,17 @@
+table.table {
+  width: 100%;
+  margin-bottom: 1rem;
+  color: #212529;
+  vertical-align: top;
+  border-color: #dee2e6;
+
+  &.table-striped > tbody > tr:nth-of-type(even) {
+    background-color: rgba(0, 0, 0, 0.05);
+    color: #212529;
+  }
+
+  &.table-hover > tbody > tr:hover {
+    background-color: rgba(0, 0, 0, 0.075);
+    color: #212529;
+  }
+}

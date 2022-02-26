@@ -1,0 +1,24 @@
+<h1>Cities</h1>
+
+<p>Here's a list of cities: feel free to play with it.</p>
+
+<p *ngIf="!cities"><em>Loading...</em></p>
+
+<table class='table table-striped' aria-labelledby="tableLabel" [hidden]="!cities">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Lat</th>
+      <th>Lon</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let city of cities">
+      <td>{{ city.id }}</td>
+      <td>{{ city.name }}</td>
+      <td>{{ city.lat }}</td>
+      <td>{{ city.lon }}</td>
+    </tr>
+  </tbody>
+</table>

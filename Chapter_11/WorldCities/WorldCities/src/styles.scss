@@ -1,0 +1,29 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+table {
+  border: 0px;
+  border-spacing: 0px;
+  border-collapse: collapse;
+
+  tr {
+    border-bottom: 1px solid #dddddd;
+
+    &:nth-child(even) {
+      background-color: #f4f4f4;
+    }
+
+    th, td {
+      text-align: left;
+      padding: 5px 10px;
+    }
+  }
+}

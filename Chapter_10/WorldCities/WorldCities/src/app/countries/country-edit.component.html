@@ -1,0 +1,57 @@
+<div class="country-edit">
+  <h1>{{title}}</h1>
+  <p *ngIf="this.id && !country"><em>Loading...</em></p>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+    <!-- Name -->
+    <mat-form-field>
+      <mat-label>Name:</mat-label>
+      <input matInput formControlName="name" required
+             placeholder="Type a name">
+      <mat-error *ngFor="let error of getErrors(form.get('name')!,
+                 'Name')">
+        {{error}}
+      </mat-error>
+    </mat-form-field>
+
+    <!-- ISO2 -->
+    <mat-form-field>
+      <mat-label>
+        ISO 3166-1 ALPHA-2 Country code (2 letters)
+      </mat-label>
+      <input matInput formControlName="iso2" required
+             placeholder="Insert the ISO2 Country code">
+      <mat-error *ngFor="let error of getErrors(form.get('iso2')!,
+              'ISO 3166-1 ALPHA 2 Country code',
+              { 'pattern' : 'requires 2 letters' })">
+        {{error}}
+      </mat-error>
+    </mat-form-field>
+
+    <!-- ISO3 -->
+    <mat-form-field>
+      <mat-label>
+        ISO 3166-1 ALPHA-3 Country code (3 letters)
+      </mat-label>
+      <input matInput formControlName="iso3" required
+             placeholder="Insert the ISO3 Country code">
+      <mat-error *ngFor="let error of getErrors(form.get('iso3')!,
+              'ISO 3166-1 ALPHA 3 Country code',
+              { 'pattern' : 'requires 3 letters' })">
+        {{error}}
+      </mat-error>
+    </mat-form-field>
+
+    <div>
+      <button mat-flat-button color="primary"
+              type="submit">
+        {{ this.id ? "Save" : "Create" }}
+      </button>
+      <button mat-flat-button color="secondary"
+              [routerLink]="['/countries']">
+        Cancel
+      </button>
+    </div>
+  </form>
+</div>
+

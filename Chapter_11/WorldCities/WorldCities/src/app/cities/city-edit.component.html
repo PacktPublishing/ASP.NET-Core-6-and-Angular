@@ -1,0 +1,107 @@
+<div class="city-edit">
+  <h1>{{title}}</h1>
+  <p *ngIf="this.id && !city"><em>Loading...</em></p>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+    <p>
+      <mat-error *ngIf="form.invalid && form.hasError('isDupeCity')">
+        <strong>ERROR</strong>:
+        A city with the same <i>name</i>, <i>lat</i>,
+        <i>lon</i> and <i>country</i> already exists.
+      </mat-error>
+    </p>
+
+    <!-- Name -->
+    <mat-form-field>
+      <mat-label>Name:</mat-label>
+      <input matInput formControlName="name" required
+             placeholder="Type a name">
+      <mat-error *ngFor="let error of getErrors(form.get('name')!,
+          'Name')">
+        {{error}}
+      </mat-error>
+    </mat-form-field>
+
+    <!-- Lat -->
+    <mat-form-field>
+      <mat-label>Latitude:</mat-label>
+      <input matInput formControlName="lat" required
+             placeholder="Insert latitude">
+      <mat-error *ngFor="let error of getErrors(form.get('lat')!,
+      'Latitude',
+      { 'pattern' : 'requires a positive or negative number with 0-4 decimal values' })">
+        {{error}}
+      </mat-error>
+    </mat-form-field>
+
+    <!-- Lon -->
+    <mat-form-field>
+      <mat-label>Longitude:</mat-label>
+      <input matInput formControlName="lon" required
+             placeholder="Insert longitude">
+      <mat-error *ngFor="let error of getErrors(form.get('lon')!,
+    'Longitude',
+    { 'pattern' : 'requires a positive or negative number with 0-4 decimal values' })">
+        {{error}}
+      </mat-error>
+    </mat-form-field>
+
+    <!-- Country -->
+    <mat-form-field *ngIf="countries | async as result">
+      <mat-label>Select a Country...</mat-label>
+      <mat-select formControlName="countryId">
+        <mat-option *ngFor="let country of result"
+                    [value]="country.id">
+          {{country.name}}
+        </mat-option>
+      </mat-select>
+      <mat-error *ngFor="let error of getErrors(form.get('countryId')!,
+          'Country')">
+        {{error}}
+      </mat-error>
+    </mat-form-field>
+
+    <div>
+      <button mat-flat-button color="primary"
+              type="submit">
+        {{ this.id ? "Save" : "Create" }}
+      </button>
+      <button mat-flat-button color="secondary"
+              [routerLink]="['/cities']">
+        Cancel
+      </button>
+    </div>
+  </form>
+</div>
+
+<!-- Form debug info panel -->
+<div class="info">
+  <div class="info-header">Form Debug Info</div>
+  <div class="info-body">
+    <div class="info-label">
+      Form Value:
+    </div>
+    <div class="info-value">
+      {{ form.value | json }}
+    </div>
+    <hr />
+    <div class="info-label">
+      Form Status:
+    </div>
+    <div class="info-value">
+      {{ form.status | json }}
+    </div>
+  </div>
+</div>
+
+<!-- Form activity log panel -->
+<div class="info">
+  <div class="info-header">Form Activity Log</div>
+  <div class="info-body">
+    <div class="info-value">
+      <span *ngIf="activityLog"
+            [innerHTML]="activityLog">
+      </span>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,36 @@
+mat-form-field {
+  display: block;
+  margin: 10px 0;
+}
+
+.info {
+  margin-top: 20px;
+  background-color: #efefef;
+  border: 1px solid #cdcdcd;
+  border-radius: 10px;
+
+  .info-header {
+    font-weight: 500;
+    padding: 10px 20px;
+    border-bottom: 1px solid #cdcdcd;
+  }
+
+  .info-body {
+    background-color: #fafafa;
+    padding: 10px 20px;
+    border-radius: 0 0 10px 10px;
+
+    .info-label {
+    }
+
+    .info-value {
+      padding: 2px 0;
+      font-size: 0.8em;
+    }
+
+    hr {
+      border: 0;
+      border-top: 1px solid #cdcdcd;
+    }
+  }
+}
