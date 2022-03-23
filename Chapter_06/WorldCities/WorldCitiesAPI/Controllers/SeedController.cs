@@ -5,7 +5,7 @@ using OfficeOpenXml;
 using WorldCitiesAPI.Data;
 using WorldCitiesAPI.Data.Models;
 
-namespace WorldCities.Controllers
+namespace WorldCitiesAPI.Controllers
 {
     [Route("api/[controller]/[action]")]
     [ApiController]

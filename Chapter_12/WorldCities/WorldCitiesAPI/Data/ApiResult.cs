@@ -128,9 +128,7 @@ namespace WorldCitiesAPI.Data
                 BindingFlags.Static |
                 BindingFlags.Instance);
             if (prop == null && throwExceptionIfNotFound)
-                throw new NotSupportedException(
-                    string.Format($"ERROR: Property '{propertyName}' does not exist.")
-                    );
+                throw new NotSupportedException($"ERROR: Property '{propertyName}' does not exist.");
             return prop != null;
         }
         #endregion
