@@ -74,7 +74,6 @@ namespace WorldCitiesAPI.Data.GraphQL
         {
             return await ApiResult<CountryDTO>.CreateAsync(
                     context.Countries.AsNoTracking()
-                        // .Include(c => c.Cities),
                         .Select(c => new CountryDTO()
                         {
                             Id = c.Id,

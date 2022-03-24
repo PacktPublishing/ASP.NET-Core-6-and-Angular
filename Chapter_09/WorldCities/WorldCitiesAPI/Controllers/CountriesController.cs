@@ -33,7 +33,6 @@ namespace WorldCitiesAPI.Controllers
         {
             return await ApiResult<CountryDTO>.CreateAsync(
                     _context.Countries.AsNoTracking()
-                        // .Include(c => c.Cities),
                         .Select(c => new CountryDTO()
                         {
                             Id = c.Id,

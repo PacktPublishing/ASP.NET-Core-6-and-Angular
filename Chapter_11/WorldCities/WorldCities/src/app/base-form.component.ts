@@ -24,7 +24,7 @@ export abstract class BaseFormComponent {
           errors.push(`${displayName} ${customMessages?.[key] ?? "contains invalid characters."}`);
           break;
         case 'isDupeField':
-          errors.push(`${displayName} ${customMessages?.[key] ?? "already exists: please choose another."}`)
+          errors.push(`${displayName} ${customMessages?.[key] ?? "already exists: please choose another."}`);
           break;
         default:
           errors.push(`${displayName} is invalid.`);

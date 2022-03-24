@@ -8,10 +8,10 @@
       <mat-label>Name:</mat-label>
       <input matInput formControlName="name" required
              placeholder="Type a name">
-      <mat-error *ngIf="this.form.controls['name'].errors?.required">
+      <mat-error *ngIf="this.form.controls['name'].errors?.['required']">
         Name is required.
       </mat-error>
-      <mat-error *ngIf="this.form.controls['name'].errors?.isDupeField">
+      <mat-error *ngIf="this.form.controls['name'].errors?.['isDupeField']">
         Name already exists: please choose another.
       </mat-error>
     </mat-form-field>
@@ -23,13 +23,13 @@
       </mat-label>
       <input matInput formControlName="iso2" required
              placeholder="Insert the ISO2 Country code">
-      <mat-error *ngIf="this.form.controls['iso2'].errors?.required">
+      <mat-error *ngIf="this.form.controls['iso2'].errors?.['required']">
         ISO 3166-1 ALPHA-2 Country code is required.
       </mat-error>
-      <mat-error *ngIf="this.form.controls['iso2'].errors?.pattern">
+      <mat-error *ngIf="this.form.controls['iso2'].errors?.['pattern']">
         ISO 3166-1 ALPHA-2 Country code requires 2 letters.
       </mat-error>
-      <mat-error *ngIf="this.form.controls['iso2'].errors?.isDupeField">
+      <mat-error *ngIf="this.form.controls['iso2'].errors?.['isDupeField']">
         This code already exists: please choose another.
       </mat-error>
     </mat-form-field>
@@ -41,13 +41,13 @@
       </mat-label>
       <input matInput formControlName="iso3" required
              placeholder="Insert the ISO3 Country code">
-      <mat-error *ngIf="this.form.controls['iso3'].errors?.required">
+      <mat-error *ngIf="this.form.controls['iso3'].errors?.['required']">
         ISO 3166-1 ALPHA-3 Country code is required.
       </mat-error>
-      <mat-error *ngIf="this.form.controls['iso3'].errors?.pattern">
+      <mat-error *ngIf="this.form.controls['iso3'].errors?.['pattern']">
         ISO 3166-1 ALPHA-3 Country code requires 3 letters.
       </mat-error>
-      <mat-error *ngIf="this.form.controls['iso3'].errors?.isDupeField">
+      <mat-error *ngIf="this.form.controls['iso3'].errors?.['isDupeField']">
         This code already exists: please choose another.
       </mat-error>
     </mat-form-field>

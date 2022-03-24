@@ -98,7 +98,7 @@ export class CityEditComponent implements OnInit {
       city.name = this.form.controls['name'].value;
       city.lat = +this.form.controls['lat'].value;
       city.lon = +this.form.controls['lon'].value;
-      city.countryId = +this.form['controls'].countryId.value;
+      city.countryId = +this.form.controls['countryId'].value;
 
       if (this.id) {
         // EDIT mode
