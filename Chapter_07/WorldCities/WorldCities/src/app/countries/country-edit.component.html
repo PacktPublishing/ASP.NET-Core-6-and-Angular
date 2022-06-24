@@ -54,7 +54,8 @@
 
     <div>
       <button mat-flat-button color="primary"
-              type="submit">
+              type="submit"
+              [disable]="!form.valid">
         {{ this.id ? "Save" : "Create" }}
       </button>
       <button mat-flat-button color="secondary"
