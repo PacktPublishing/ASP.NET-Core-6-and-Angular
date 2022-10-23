@@ -119,7 +119,6 @@ namespace WorldCitiesAPI.Controllers
                     nRow, 1, nRow, worksheet.Dimension.End.Column];
 
                 var name = row[nRow, 1].GetValue<string>();
-                var nameAscii = row[nRow, 2].GetValue<string>();
                 var lat = row[nRow, 3].GetValue<decimal>();
                 var lon = row[nRow, 4].GetValue<decimal>();
                 var countryName = row[nRow, 5].GetValue<string>();
