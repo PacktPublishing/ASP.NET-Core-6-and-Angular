@@ -23,3 +23,7 @@ By the end of this web development book, you will understand how to tie together
 7. Deploy web apps to Azure App Service using IIS, Kestrel, and NGINX
 8. Learn to develop fast and flexible Web APIs using GraphQL
 9. Add real-time capabilities to Angular apps with ASP.NET Core SignalR
+### Download a free PDF
+
+ <i>If you have already purchased a print or Kindle version of this book, you can get a DRM-free PDF version at no cost.<br>Simply click on the link to claim your free PDF.</i>
+<p align="center"> <a href="https://packt.link/free-ebook/9781803239705">https://packt.link/free-ebook/9781803239705 </a> </p>
